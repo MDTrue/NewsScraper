@@ -1,0 +1,47 @@
+<div class="navContainer">
+    <div class="navContainer__headline">Saved Articles</div>
+    <div class="navContainer__subheading">Keep your favorite articles here</div>
+    <a class="navContainer__button--home" href="/">return to the home page</a>
+ 
+</div>
+{{#each article}}
+<div class="articleContainer">
+    <a class="articleContainer__link" href={{this.link}}>{{title}}</a>
+    <div class="articleContainer__author">by {{this.author}}</div>
+    <div class="articleContainer__summary">{{this.summary}}</div>
+    <button class="articleContainer__button--delete" data-id="{{this._id}}">delete this article</button>
+    <button class="articleContainer__button--comment" id="modalButton" data-id="{{this._id}}">Make a note</button>
+</div>
+<!--Note Modal content -->
+{{!-- <div class="noteModal" id="noteModal">
+<div class="noteModal__content">
+  <div class="noteModal__header">
+    <h2>Notes</h2>
+  </div>
+  <div class="noteModal__body">
+      <form class="noteModal__form" id="noteModal__form">
+          <input required placeholder="Enter your note here" type="text" id="noteText">
+             <button class="noteModal__button--post" type="submit" id="notebutton">Post your note</button>
+
+      </form>
+  
+  </div>
+  <div class="noteModal__footer">
+    <span class="close">&times;</span>
+    <h3>Modal Footer</h3>
+  </div>
+</div>
+</div> --}}
+{{/each}}
+
+
+
+
+
+
+
+
+
+{{!-- <text class="headline">{{this.title}}</text>
+<div class="article">{{#each articles}}</div>
+<div class="link">{{this.link}}</div> --}}

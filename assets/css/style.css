@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0; 
+    background-color: red;
+}
+html {
+    font-size: 62.5%; }
+    @media only screen and (min-width: 112.5em) {
+      html {
+        font-size: 75%; } }
+    @media only screen and (max-width: 75em) {
+      html {
+        font-size: 56.25%; } }
+    @media only screen and (max-width: 56.25em) {
+      html {
+        font-size: 50%; } }
+    @media only screen and (max-width: 37.5em) {
+      html {
+        font-size: 37.5%; } }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    outline: none; }
+  
+  a:link {
+    
+    text-decoration: none;
+    outline: none; }
+  
+  a:visited {
+   
+    text-decoration: none;
+    outline: none; }
+  
+  a:hover {
+   
+    color: white;
+    text-decoration: none;
+    outline: none; }
+  
+  a:active {
+ 
+    text-decoration: none;
+    outline: none; }
