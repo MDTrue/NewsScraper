@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+console.log("hello")
     //saving an article
     $(document).on("click","#saveButton",function(){
         event.preventDefault();
