@@ -2,15 +2,15 @@
     <div class="navContainer__headline">Art News Scraper</div>
     <div class="navContainer__subheading">Get and comment on the latest art news.</div>
     <a class="navContainer__button--scrape" href="/scrape">find new articles</a>
-    <a class="navContainer__button--save" id="saveButton"href="/saved">your saved articles</a>
+    <a class="navContainer__button--save" id="savedButton"href="/articles/saved">your saved articles</a>
 </div>
 {{#each articles}}
 <div class="articleContainer">
     <a class="articleContainer__link" href={{this.link}}>{{this.title}}</a>
     <div class="articleContainer__author">by {{this.author}}</div>
     <div class="articleContainer__summary">{{this.summary}}</div>
-    <button class="articleContainer__button--save" data-id="{{this._id}}">Save this article</button>
-    <button class="articleContainer__button--comment" id="modalButton" data-id="{{this._id}}">Make a note</button>
+    <button class="articleContainer__button--save" id="articleSaveButton" data-id="{{this._id}}">Save this article</button>
+    
 </div>
 {{/each}}
 

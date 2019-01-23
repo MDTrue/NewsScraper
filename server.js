@@ -73,6 +73,8 @@ app.get("/scrape", function (req, res) {
                     console.log(err);
                 });
         });
+        //send back to the homepage
+        res.redirect("/");
 
         // Send a message to the client
         res.send("Scrape Complete");
@@ -80,7 +82,7 @@ app.get("/scrape", function (req, res) {
 });
 
 //getting all articles
-app.get("/articles/artNews", function (req, res) {
+app.get("/articles", function (req, res) {
     // Grab every document in the Articles collection
     db.Article.find({})
         .then(function (dbArticles) {
@@ -107,16 +109,79 @@ app.get("/", function (req, res) {
         });
 
 });
-app.get("/saved",function(req,res){
-    db.Article.find({"saved": true})
-    .then(function(dbArticles){
-        var hbsObject = {articles:dbArticles};
-        res.render("saved",hbsObject);
-    })
-    .catch(function (err) {
-        // If an error occurred, send it to the client
-        res.json(err);
-    });
+//GET articles for saved page
+app.get("/articles/saved", function (req, res) {
+    db.Article.find({ saved: true })
+        .then(function (dbArticles) {
+            var hbsObject = { articles: dbArticles };
+            res.render("saved", hbsObject);
+        })
+        .catch(function (err) {
+            // If an error occurred, send it to the client
+            res.json(err);
+        });
+})
+//route to save articles
+app.put("/save/articles/:id", function (req, res) {
+    //find one and update
+    db.Article.findOneAndUpdate({ _id: req.params.id },
+        { $set: { saved: true } })
+        .then(function (dbArticle) {
+            res.json(dbArticle)
+        })
+        .catch(function (err) {
+            // If an error occurred, send it to the client
+            res.json(err);
+        });
+
+
+});
+//removing an article from favorites
+app.put("/unsave/articles/:id", function (req, res) {
+    //find one and update
+    db.Article.findOneAndUpdate({ _id: req.params.id },
+        { $set: { saved: false } })
+        .then(function (dbArticle) {
+            res.json(dbArticle)
+        })
+        .catch(function (err) {
+            // If an error occurred, send it to the client
+            res.json(err);
+        });
+
+
+});
+
+//posting a note
+app.post("/articles/:id", function (req, res) {
+    db.Note.create(req.body)
+        .then(function (dbNote) {
+            //attaching the note to a specific articles array by id
+            return db.Article.findOneAndUpdate({ _id: req.params.id }, { $push: { notes: dbNote._id } }, { new: true });
+        })
+        //return the article to the json
+        .then(function (dbArticle) {
+            res.json(dbArticle)
+        })
+        .catch(function (err) {
+            // If an error occurred, send it to the client
+            res.json(err);
+        });
+})
+//getting an article and its associated notes
+app.post("/save/articles/:id", function (req, res) {
+        //find one using the ID
+        db.Article.findOne({_id:req.params.id})
+        //use populate
+        .populate("notes")
+        //return the article to the json
+        .then(function (dbArticle){
+            res.json(dbArticle)
+        })
+        .catch(function (err) {
+            // If an error occurred, send it to the client
+            res.json(err);
+        });
 })
 
 
