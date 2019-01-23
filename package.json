@@ -1,23 +1,13 @@
 {
-  "name": "NewsScraper",
+  "name": "mongo_homework",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MDTrue/NewsScraper.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MDTrue/NewsScraper/issues"
-  },
-  "homepage": "https://github.com/MDTrue/NewsScraper#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
