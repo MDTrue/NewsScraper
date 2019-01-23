@@ -1,7 +1,157 @@
 body {
     margin: 0;
     padding: 0; 
-    background-color: red;
+    background-image: linear-gradient(to left,black, grey);
+    font-family: 'Quicksand', sans-serif;
+}
+.navContainer{
+  background-image: radial-gradient(black, grey);
+  color: whitesmoke;
+  height: 20em;
+  /* display: flex; */
+  
+}
+.navContainer__headline{
+  text-align: center;
+  font-size: 6em;
+}
+.navContainer__subheading{
+  font-size: 4em;
+  text-align: center;
+}
+.navContainer__button--scrape{
+  background-color: black;
+  padding: 1em;
+  font-size: 2em;
+  margin: .5em;
+  border-radius: .5em;
+
+}
+.navContainer__button--scrape:hover{
+  background-color: grey;
+  color:black;
+  padding: 1em;
+  font-size: 2em;
+  
+
+}
+.navContainer__button--save{
+  background-color: black;
+  padding: 1em;
+  font-size: 2em;
+  margin: .5em;
+  border-radius: .5em;
+
+}
+.navContainer__button--save:hover{
+  background-color: grey;
+  color:black;
+  padding: 1em;
+  font-size: 2em;
+ 
+
+}
+.navContainer__button--home{
+  background-color: black;
+  padding: 1em;
+  font-size: 2em;
+  margin: .5em;
+  border-radius: .5em;
+
+}
+.navContainer__button--home:hover{
+  background-color: grey;
+  color:black;
+  padding: 1em;
+  font-size: 2em;
+ 
+
+}
+.articleContainer__button--save{
+  background-color: black;
+  color: white;
+  padding: 1em;
+  font-size: 1.5em;
+  margin: .5em;
+  border-radius: .5em;
+}
+.articleContainer__button--save:hover{
+  background-color: grey;
+  color:black;
+  padding: 1em;
+  font-size: 1.5em;
+}
+.articleContainer{
+  margin: 1em;
+}
+.articleContainer__link{
+  font-size: 2em;
+}
+.articleContainer__author{
+  font-size: 1.5em;
+}
+.articleContainer__summary{
+  font-size: 1.5em;
+}
+.articleContainer__button--delete{
+  background-color: black;
+  color: white;
+  padding: 1em;
+  font-size: 1.5em;
+  margin: .5em;
+  border-radius: .5em;
+}
+.articleContainer__button--delete:hover{
+  background-color: grey;
+  color:black;
+  padding: 1em;
+  font-size: 1.5em;
+}
+.articleContainer__button--comment{
+  background-color: black;
+  color: white;
+  padding: 1em;
+  font-size: 1.5em;
+  margin: .5em;
+  border-radius: .5em;
+}
+.articleContainer__button--comment:hover{
+  background-color: grey;
+  color:black;
+  padding: 1em;
+  font-size: 1.5em;
+}
+.noteContainer__button--notePost{
+  background-color: black;
+  color: white;
+  padding: 1em;
+  font-size: 1.5em;
+  margin: .5em;
+  border-radius: .5em;
+}
+.noteContainer__button--notePost:hover{
+  background-color: grey;
+  color:black;
+  padding: 1em;
+}
+.noteContainer__form{
+  padding-left: 1em;
+}
+.noteContainer__form--title{
+  font-size: 3em;
+  padding: 1em;
+  border-radius: .5em;
+
+}
+.noteContainer__form--comment{
+  font-size: 3em;
+  padding: 1em;
+  border-radius: .5em;
+}
+.noteContainer__heading-headline{
+  font-size: 3em;
+  text-align: center;
+  color: grey;
 }
 html {
     font-size: 62.5%; }

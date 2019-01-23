@@ -169,7 +169,7 @@ app.post("/articles/:id", function (req, res) {
         });
 })
 //getting an article and its associated notes
-app.post("/save/articles/:id", function (req, res) {
+app.get("/articles/:id", function (req, res) {
         //find one using the ID
         db.Article.findOne({_id:req.params.id})
         //use populate
